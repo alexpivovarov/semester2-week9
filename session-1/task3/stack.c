@@ -57,7 +57,7 @@ Data *pop( Stack *stack ) {
     if( stack->top == 0 )  // check for empty stack
         return NULL;
 
-    Data *new = stack->data[stack->top];
+    Data *new = stack->data[stack->top - 1];
     stack->top--;
 
     return new;
@@ -77,7 +77,7 @@ void displayStack ( Stack *stack ) {
  * free dynamic array data
  */
 void freeStack( Stack *stack ) {
-    for( int k=0; k<stack->size; ++k )
+    for( int k=0; k<stack->top; ++k )
         free( stack->data[k] ); // free stack Data item
     free( stack->data );        // free stack Data array
     return;

@@ -18,10 +18,10 @@ Data *createData( int val ) {
  * create Node item
  */
 Node *createNode( Data *data ) {
-    Node *new = malloc( sizeof(Node) );
-    new->data = data;
-    new->next = NULL;
-    return new;
+    Node *new = malloc( sizeof(Node) ); //allocating enough heap memory to hold one Node struct
+    new->data = data; //attaches the Data pointer passed in as an argument to the node
+    new->next = NULL; //sets the next pointer to null
+    return new; // returns the pointer to the caller
 }
 
 /*

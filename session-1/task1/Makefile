@@ -1,10 +1,15 @@
 
-CC = gcc
-CFLAGS = -Wall -Wextra 
+CC = gcc #sets the compiler to GCC
+CFLAGS = -Wall -Wextra  #enables all common warnings and extra warnings
 
-SRC = main.c node.c
-OBJ = $(SRC:.c=.o)
-EXE = node
+SRC = main.c node.c #the two source files
+OBJ = $(SRC:.c=.o) # derives object file names by substituting .c → .o, producing main.o node.c
+EXE = node # the final executable name
+
+
+
+
+#compilation rules
 
 $(EXE): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^
